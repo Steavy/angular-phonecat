@@ -26,15 +26,6 @@ describe('phoneList', function() {
       expect(ctrl.phones).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
     });
 
-    it('should NOT create a `phones` property with 2 FALSE phones fetched with `$http`', function() {
-          jasmine.addCustomEqualityTester(angular.equals);
-
-          expect(ctrl.phones).toEqual([]);
-
-          $httpBackend.flush();
-          expect(ctrl.phones).not.toEqual([{name: 'Lexus S'}, {name: 'Botorola DROID'}]);
-        });
-
     it('should set a default value for the `orderProp` property', function() {
       expect(ctrl.orderProp).toBe('age');
     });
